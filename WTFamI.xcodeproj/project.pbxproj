@@ -1,0 +1,304 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		63C8DDD716290F9F00AA4721 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C8DDD616290F9F00AA4721 /* UIKit.framework */; };
+		63C8DDD916290F9F00AA4721 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C8DDD816290F9F00AA4721 /* Foundation.framework */; };
+		63C8DDDB16290F9F00AA4721 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C8DDDA16290F9F00AA4721 /* CoreGraphics.framework */; };
+		63C8DDE116290F9F00AA4721 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 63C8DDDF16290F9F00AA4721 /* InfoPlist.strings */; };
+		63C8DDE316290F9F00AA4721 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C8DDE216290F9F00AA4721 /* main.m */; };
+		63C8DDE716290F9F00AA4721 /* WTFamIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C8DDE616290F9F00AA4721 /* WTFamIAppDelegate.m */; };
+		63C8DDE916290F9F00AA4721 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 63C8DDE816290F9F00AA4721 /* Default.png */; };
+		63C8DDEB16290FA000AA4721 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63C8DDEA16290FA000AA4721 /* Default@2x.png */; };
+		63C8DDED16290FA000AA4721 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63C8DDEC16290FA000AA4721 /* Default-568h@2x.png */; };
+		63C8DDF016290FA000AA4721 /* WTFamIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C8DDEF16290FA000AA4721 /* WTFamIViewController.m */; };
+		63C8DDF316290FA000AA4721 /* WTFamIViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63C8DDF116290FA000AA4721 /* WTFamIViewController.xib */; };
+		63C8DDFA16290FC100AA4721 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C8DDF916290FC100AA4721 /* CoreLocation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		63C8DDD216290F9F00AA4721 /* WTFamI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WTFamI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		63C8DDD616290F9F00AA4721 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		63C8DDD816290F9F00AA4721 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		63C8DDDA16290F9F00AA4721 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		63C8DDDE16290F9F00AA4721 /* WTFamI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WTFamI-Info.plist"; sourceTree = "<group>"; };
+		63C8DDE016290F9F00AA4721 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		63C8DDE216290F9F00AA4721 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		63C8DDE416290F9F00AA4721 /* WTFamI-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WTFamI-Prefix.pch"; sourceTree = "<group>"; };
+		63C8DDE516290F9F00AA4721 /* WTFamIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTFamIAppDelegate.h; sourceTree = "<group>"; };
+		63C8DDE616290F9F00AA4721 /* WTFamIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTFamIAppDelegate.m; sourceTree = "<group>"; };
+		63C8DDE816290F9F00AA4721 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		63C8DDEA16290FA000AA4721 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		63C8DDEC16290FA000AA4721 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		63C8DDEE16290FA000AA4721 /* WTFamIViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTFamIViewController.h; sourceTree = "<group>"; };
+		63C8DDEF16290FA000AA4721 /* WTFamIViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTFamIViewController.m; sourceTree = "<group>"; };
+		63C8DDF216290FA000AA4721 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WTFamIViewController.xib; sourceTree = "<group>"; };
+		63C8DDF916290FC100AA4721 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		63C8DDCF16290F9F00AA4721 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63C8DDFA16290FC100AA4721 /* CoreLocation.framework in Frameworks */,
+				63C8DDD716290F9F00AA4721 /* UIKit.framework in Frameworks */,
+				63C8DDD916290F9F00AA4721 /* Foundation.framework in Frameworks */,
+				63C8DDDB16290F9F00AA4721 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		63C8DDC716290F9F00AA4721 = {
+			isa = PBXGroup;
+			children = (
+				63C8DDDC16290F9F00AA4721 /* WTFamI */,
+				63C8DDD516290F9F00AA4721 /* Frameworks */,
+				63C8DDD316290F9F00AA4721 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		63C8DDD316290F9F00AA4721 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				63C8DDD216290F9F00AA4721 /* WTFamI.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		63C8DDD516290F9F00AA4721 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				63C8DDF916290FC100AA4721 /* CoreLocation.framework */,
+				63C8DDD616290F9F00AA4721 /* UIKit.framework */,
+				63C8DDD816290F9F00AA4721 /* Foundation.framework */,
+				63C8DDDA16290F9F00AA4721 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		63C8DDDC16290F9F00AA4721 /* WTFamI */ = {
+			isa = PBXGroup;
+			children = (
+				63C8DDE516290F9F00AA4721 /* WTFamIAppDelegate.h */,
+				63C8DDE616290F9F00AA4721 /* WTFamIAppDelegate.m */,
+				63C8DDEE16290FA000AA4721 /* WTFamIViewController.h */,
+				63C8DDEF16290FA000AA4721 /* WTFamIViewController.m */,
+				63C8DDF116290FA000AA4721 /* WTFamIViewController.xib */,
+				63C8DDDD16290F9F00AA4721 /* Supporting Files */,
+			);
+			path = WTFamI;
+			sourceTree = "<group>";
+		};
+		63C8DDDD16290F9F00AA4721 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				63C8DDDE16290F9F00AA4721 /* WTFamI-Info.plist */,
+				63C8DDDF16290F9F00AA4721 /* InfoPlist.strings */,
+				63C8DDE216290F9F00AA4721 /* main.m */,
+				63C8DDE416290F9F00AA4721 /* WTFamI-Prefix.pch */,
+				63C8DDE816290F9F00AA4721 /* Default.png */,
+				63C8DDEA16290FA000AA4721 /* Default@2x.png */,
+				63C8DDEC16290FA000AA4721 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		63C8DDD116290F9F00AA4721 /* WTFamI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63C8DDF616290FA000AA4721 /* Build configuration list for PBXNativeTarget "WTFamI" */;
+			buildPhases = (
+				63C8DDCE16290F9F00AA4721 /* Sources */,
+				63C8DDCF16290F9F00AA4721 /* Frameworks */,
+				63C8DDD016290F9F00AA4721 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WTFamI;
+			productName = WTFamI;
+			productReference = 63C8DDD216290F9F00AA4721 /* WTFamI.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		63C8DDC916290F9F00AA4721 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = WTFamI;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "David Barkman";
+			};
+			buildConfigurationList = 63C8DDCC16290F9F00AA4721 /* Build configuration list for PBXProject "WTFamI" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 63C8DDC716290F9F00AA4721;
+			productRefGroup = 63C8DDD316290F9F00AA4721 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				63C8DDD116290F9F00AA4721 /* WTFamI */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		63C8DDD016290F9F00AA4721 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63C8DDE116290F9F00AA4721 /* InfoPlist.strings in Resources */,
+				63C8DDE916290F9F00AA4721 /* Default.png in Resources */,
+				63C8DDEB16290FA000AA4721 /* Default@2x.png in Resources */,
+				63C8DDED16290FA000AA4721 /* Default-568h@2x.png in Resources */,
+				63C8DDF316290FA000AA4721 /* WTFamIViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		63C8DDCE16290F9F00AA4721 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63C8DDE316290F9F00AA4721 /* main.m in Sources */,
+				63C8DDE716290F9F00AA4721 /* WTFamIAppDelegate.m in Sources */,
+				63C8DDF016290FA000AA4721 /* WTFamIViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		63C8DDDF16290F9F00AA4721 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63C8DDE016290F9F00AA4721 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		63C8DDF116290FA000AA4721 /* WTFamIViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63C8DDF216290FA000AA4721 /* en */,
+			);
+			name = WTFamIViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		63C8DDF416290FA000AA4721 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		63C8DDF516290FA000AA4721 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		63C8DDF716290FA000AA4721 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WTFamI/WTFamI-Prefix.pch";
+				INFOPLIST_FILE = "WTFamI/WTFamI-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		63C8DDF816290FA000AA4721 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WTFamI/WTFamI-Prefix.pch";
+				INFOPLIST_FILE = "WTFamI/WTFamI-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		63C8DDCC16290F9F00AA4721 /* Build configuration list for PBXProject "WTFamI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63C8DDF416290FA000AA4721 /* Debug */,
+				63C8DDF516290FA000AA4721 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		63C8DDF616290FA000AA4721 /* Build configuration list for PBXNativeTarget "WTFamI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63C8DDF716290FA000AA4721 /* Debug */,
+				63C8DDF816290FA000AA4721 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 63C8DDC916290F9F00AA4721 /* Project object */;
+}
