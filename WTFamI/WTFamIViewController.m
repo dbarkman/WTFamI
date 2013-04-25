@@ -8,13 +8,9 @@
 
 #import "WTFamIViewController.h"
 
-@interface WTFamIViewController ()
-
-@end
-
 @implementation WTFamIViewController
 
-@synthesize speedCount, sumSpeed, averageSpeed, calculatedDistance, performCalculations;
+@synthesize speedCount, sumSpeed, maxSpeed, averageSpeed, calculatedDistance, performCalculations;
 
 #define kAccelerometerFrequency 1.0 //Hz
 
@@ -37,18 +33,45 @@
 	return self;
 }
 
+- (void)viewDidLoad
+{
+	[super viewDidLoad];
+	
+	[progress setProgressTintColor:[UIColor greenColor]];
+}
+
 - (void)locationManager:(CLLocationManager *)manager
 	didUpdateToLocation:(CLLocation *)newLocation
 		   fromLocation:(CLLocation *)oldLocation
 {
 	CLLocationSpeed clSpeed = newLocation.speed * 2.2369;
 	
-	NSString *latitude = [NSString stringWithFormat:@"%.4f", newLocation.coordinate.latitude];
-	NSString *longitude = [NSString stringWithFormat:@"%.4f", newLocation.coordinate.longitude];
-	NSString *altitude = [NSString stringWithFormat:@"%.2f", newLocation.altitude / 3.28084];
-	NSString *course = [NSString stringWithFormat:@"%.4f", newLocation.course];
-	NSString *timestamp = [NSString stringWithFormat:@"%@", newLocation.timestamp.description];
-	NSString *speed = [NSString stringWithFormat:@"%.1f", clSpeed];
+	latitude = [NSString stringWithFormat:@"%.4f", newLocation.coordinate.latitude];
+	longitude = [NSString stringWithFormat:@"%.4f", newLocation.coordinate.longitude];
+	altitude = [NSString stringWithFormat:@"%.2f", newLocation.altitude / 3.28084];
+	course = [NSString stringWithFormat:@"%.4f", newLocation.course];
+	lastTimestamp = timestamp;
+	timestamp = [NSString stringWithFormat:@"%@", newLocation.timestamp.description];
+	lastSpeed = speed;
+	speed = [NSString stringWithFormat:@"%.1f", clSpeed];
+	int lastSpeedInt = [lastSpeed integerValue];
+	int speedInt = [speed integerValue];
+	if (lastSpeedInt > speedInt) { //slowing down
+		float change = lastSpeedInt - speedInt;
+		if (change > 10) change = 10;
+		if (change >= 0.0f && change <= 4.0f) {
+			[progress setProgressTintColor:[UIColor greenColor]];
+		} else if (change > 4.0f && change <= 6.0f) {
+			[progress setProgressTintColor:[UIColor yellowColor]];
+		} else if (change > 6.0f && change <= 8.0f) {
+			[progress setProgressTintColor:[UIColor orangeColor]];
+		} else if (change > 8.0f && change <= 10.0f) {
+			[progress setProgressTintColor:[UIColor redColor]];
+		}
+		[progress setProgress:(change / 10) animated:YES];
+	} else {
+		[progress setProgress:0 animated:YES];
+	}
 	
 	if (performCalculations == YES) {
 		if (oldLocation != nil) {
@@ -58,14 +81,18 @@
 		
 		//should set this in a preference
 		if (clSpeed > 0) {
+			//find max speed
+			if (clSpeed > maxSpeed) maxSpeed = clSpeed;
+			
+			//find average speed
 			speedCount++;
 			sumSpeed += clSpeed;
 			averageSpeed = sumSpeed / speedCount;
 		}
 	}
-	NSString *displayedDistance = [NSString stringWithFormat:@"Distance: %.2f", calculatedDistance * 0.00062137119];
-	NSString *displayedAverageSpped = [NSString stringWithFormat:@"Average Speed: %.1f", averageSpeed];
-	NSString *displayedSpeedCount = [NSString stringWithFormat:@"%i", speedCount];
+	displayedDistance = [NSString stringWithFormat:@"Distance: %.2f", calculatedDistance * 0.00062137119];
+	displayedMaxSpeed = [NSString stringWithFormat:@"Max Speed: %.1f", maxSpeed];
+	displayedAverageSpped = [NSString stringWithFormat:@"Average Speed: %.1f", averageSpeed];
 	
 //	NSLog(@"%@", newLocation);
 	
@@ -76,15 +103,15 @@
 	[speedField setText:speed];
 	[timestampField setText:timestamp];
 	[distanceField setText:displayedDistance];
+	[maxSpeedField setText:displayedMaxSpeed];
 	[averageSpeedField setText:displayedAverageSpped];
-	[speedCountField setText:displayedSpeedCount];
 }
 
 - (void)locationManager:(CLLocationManager *)manager
 	   didUpdateHeading:(CLHeading *)newHeading
 {
-	NSString *trueHeading = [NSString stringWithFormat:@"T: %.3f", newHeading.trueHeading];
-	NSString *magneticHeading = [NSString stringWithFormat:@"M: %.3f", newHeading.magneticHeading];
+	trueHeading = [NSString stringWithFormat:@"T: %.3f", newHeading.trueHeading];
+	magneticHeading = [NSString stringWithFormat:@"M: %.3f", newHeading.magneticHeading];
 	
 	//	NSLog(@"%@", trueHeading);
 	
@@ -94,7 +121,7 @@
 
 - (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration
 {
-	NSLog(@"Acceleration Sensed!!");
+//	NSLog(@"Acceleration Sensed!!");
 	
     x = acceleration.x + calX;
     y = acceleration.y + calY;
@@ -105,12 +132,12 @@
 		y * y +
 		z * z);
 	
-	NSString *displayedAM = [NSString stringWithFormat:@"%f", accelMagnitude];
-	NSLog(@"%@", displayedAM);
+	displayedAM = [NSString stringWithFormat:@"%f", accelMagnitude];
+//	NSLog(@"%@", displayedAM);
 	
-	NSString *displayedX = [NSString stringWithFormat:@"%.1f", x];
-	NSString *displayedY = [NSString stringWithFormat:@"%.1f", y];
-	NSString *displayedZ = [NSString stringWithFormat:@"%.1f", z];
+	displayedX = [NSString stringWithFormat:@"%.1f", x];
+	displayedY = [NSString stringWithFormat:@"%.1f", y];
+	displayedZ = [NSString stringWithFormat:@"%.1f", z];
 	
 	[xAccelerationLabel setText:displayedX];
 	[yAccelerationLabel setText:displayedY];
@@ -130,12 +157,17 @@
 	[distanceField setText:@"Distance: 0.00"];
 }
 
+- (IBAction)resetMaxSpeed:(id)sender
+{
+	maxSpeed = 0;
+	[maxSpeedField setText:@"Max Speed: 0.0"];
+}
+
 - (IBAction)resetAverageSpeed:(id)sender
 {
 	speedCount = 0;
 	sumSpeed = 0;
 	[averageSpeedField setText:@"Average Speed: 0.0"];
-	[speedCountField setText:@"0"];
 }
 
 - (IBAction)startUpdating:(id)sender
